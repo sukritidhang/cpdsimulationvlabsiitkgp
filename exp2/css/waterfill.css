@@ -1,0 +1,670 @@
+.main {
+	 margin-top: 50px;
+	 margin-bottom: 50px;
+	 position: relative;
+	 height: 100%;
+}
+ .glass-container {
+	 position: absolute;
+	 background: rgba(0, 0, 0, 0.10);
+	 width: 85px;
+	 border: 1px solid #bbb;
+	 border-top: 1px solid #ccc;
+	 -webkit-border-radius: 10px;
+	 -moz-border-radius: 10px;
+	 -ms-border-radius: 10px;
+	 border-radius: 10px;
+	 padding: 5px 5px 30px;
+}
+ .glass-container:first-child {/*first jar from the left side*/
+	 top: 280px;
+	 left: 500px;
+	 height: 150px;
+}
+ .glass-container:nth-child(2) {/*second jar from the left side bottom*/
+	 top: 280px;
+	 left: 907px;
+	 height: 150px;
+}
+ .glass-container:nth-child(3) {/*third jar from the left side top*/
+	 top: 47px;
+	 left: 907px;
+}
+ .glass { /*inner jar*/
+	 background: rgba(255, 255, 255, 0.50);
+	 border-top: none;
+	 width: 80px;
+	 border: 1px solid #bbb;
+	 border-top: 1px solid #eee;
+	 -webkit-border-radius: 10px;
+	 -moz-border-radius: 10px;
+	 -ms-border-radius: 10px;
+	 border-radius: 10px;
+	 position: relative;
+}
+ .glass-first {/*inner jar 1 from left side*/ 
+	 height: 120px;
+	 width: 50px;
+	 left:18px;
+}
+ .glass-second {/*inner jar 2 from left side bottom*/
+	 height: 120px;
+	 width: 50px;
+	 left:18px;
+}
+ .glass-third {/*inner jar 3 from left side top*/
+	 height: 150px;
+}
+ 
+ .glass .water {/*water styling*/
+	 width: 236px;
+	 background-color: #9cc6ff;
+	 position: absolute;
+	 bottom: 0px;
+	 height: 0;
+	 -webkit-transition: all 4s ease-out;
+	 -moz-transition: all 4s ease-out;
+	 -ms-transition: all 4s ease-out;
+	 transition: all 4s ease-out;
+	 -webkit-border-radius: 10px;
+	 -moz-border-radius: 10px;
+	 -ms-border-radius: 10px;
+	 border-radius: 10px;
+}
+ .glass .water.water-anim {
+	 height: 100%;
+	 background-position: top left;
+}
+ .pipe {/*total pipe postion of the water flow from tap to container*/
+	 background: #fff;
+	 border: 2px solid #ccc;
+	 position: absolute;
+}
+ .pipe .water-fill {
+	 background: #9cc6ff;
+	 position: absolute;
+	 animation-play-state: paused;
+}
+ .pipe-first {/*pipe postion of the water flow from tap (vertical pipe)*/
+	 width: 20px;
+	 height: 410px;
+	 top: 70px;
+	 left: 91px;
+	 z-index: 10;
+}
+ .pipe-first .water-fill {/*water fill postion from tap (vertical pipe)*/
+	 left: 0;
+	 top: 0;
+	 width: 16px;
+	 height: 0;
+	 -webkit-transition: all 2s linear;
+	 -moz-transition: all 2s linear;
+	 -ms-transition: all 2s linear;
+	 transition: all 2s linear;
+}
+ .pipe-second {/*pipe postion of the water flow (horizontal pipe)*/
+	 height: 10px;
+	 width: 644px;
+	 top: 508px;
+	 left: 309px;
+	 z-index: 12;
+	 border-left: none;
+	 border-right: none;
+}
+ .pipe-second .water-fill {/*water fill postion from tap (horizontal pipe)*/
+	 top: 0;
+	 left: 265px;
+	 width: 0;
+	 height: 18px;
+	 -webkit-transition: all 4.5s linear;
+	 -moz-transition: all 4.5s linear;
+	 -ms-transition: all 4.5s linear;
+	 transition: all 4.5s linear;
+}
+ .pipe.pipe-vertical {/*pipe postion of the water flow from each container (vertical pipe)*/
+	 width: 10px;
+	 border-top: none;
+	 z-index: 11;
+}
+ .pipe.pipe-vertical-first {/*pipe postion of the water flow to water mains from first container (vertical pipe)*/
+	 left: 540px;
+	 top: 465px;
+	 height: 88px;
+	 border-bottom: none;	 
+}
+ .pipe.pipe-vertical-second {/*pipe postion of the water flow to second horizontal bottom  from second container (vertical pipe)*/
+	 left: 950px;
+	 height: 55px;	 
+	 top: 465px;
+	 border-bottom: fill;
+}
+ .pipe.pipe-vertical-third {/*pipe postion of the water flow to second(bottom right) container from third(top right) container (vertical pipe)*/
+	 left: 950px;
+	 top: 235px;
+	 height: 55px;
+	 border-bottom: none;
+}
+ .pipe.pipe-vertical .water-fill {/*water fill postion to each container(vertical pipe)*/
+	 /*bottom: 0;*/
+	 top:0;
+	 width: 18px;
+	 height: 0;
+	 -webkit-transition: all 0.5s linear;
+	 -moz-transition: all 0.5s linear;
+	 -ms-transition: all 0.5s linear;
+	 transition: all 0.5s linear;
+}
+.pipe.pipe-first.pipe-anim .water-fill, .pipe.pipe-vertical.pipe-anim .water-fill {
+	 width: 100%;
+	 height: 100%;
+}
+.pipe.pipe-second.pipe-anim .water-fill{
+	width: 72%;
+	height: 100%;
+}
+
+/*pipe at top*/
+.pipeup {/*total pipe postion of the water flow from tap to container upper side*/
+	background: #fff;
+	border: 2px solid #ccc;
+	position: absolute;
+}
+.pipeup .water-fillup {
+	background: #9cc6ff;
+	position: absolute;
+	animation-play-state:  paused;
+}
+.pipe-tank {/*tank*/
+	width: 80px;
+	height: 250px;
+	top: 150px;
+	left: 260px;
+	z-index: 10;
+}
+.pipe-tank .water-fillup {/*water fill postion (vertical pipe)upper side*/
+	left: 0;
+	top: 0;
+	width: 16px;
+	height: 0;
+	-webkit-transition: all 2s linear;
+	-moz-transition: all 2s linear;
+	-ms-transition: all 2s linear;
+	transition: all 2s linear;
+}
+
+
+.pipe-secondup {/*pipe postion of the water flow (horizontal pipe)upper side*/
+	height: 10px;
+	width: 600px;
+	top: 72px;
+	left: 309px;
+	z-index: 12;
+	border-left: none;
+	border-right: none;
+}
+.pipe-secondup .water-fillup {/*water fill postion from tap (horizontal pipe)upper side*/
+	/*top: 0;*/
+	left: 0;
+	width: 0;
+	height: 18px;
+	-webkit-transition: all 6s linear;
+	-moz-transition: all 6s linear;
+	-ms-transition: all 6s linear;
+	transition: all 6s linear;
+}
+
+.pipe-firstup{/*pipe postion of the water flow (vertical pipe)left side of the tank*/
+	left: 200px;
+	height: 350px;
+	top: 169px;	
+	width: 10px;
+	z-index:11;
+}
+
+.pipeup.pipe-horizontal-firstup-first {/*pipe postion of the water flow  (horizontal pipe)upperleft side  */
+	width: 50px;
+	left:212px;
+	height: 10px;
+	top: 169px;
+	border-right: none;
+	border-left: none;
+	z-index: 12;
+}
+.pipeup.pipe-horizontal-firstup-second {/*pipe postion of the water flow  (horizontal pipe)bottomleft side*/
+	width:50px;
+	left: 212px;
+	height: 10px;
+	top: 370px;
+	z-index: 12;
+	border-right: none;
+	border-left: none;
+}
+.pipeup.pipe-verticalup {/*pipe postion of the water flow to each container (vertical pipe) upper side*/
+	width: 10px;
+	/*border-bottom: none;
+	border-top: none;*/
+	z-index: 11;
+}
+.pipeup.pipe-vertical-firstup {/*pipe postion of the water flow inside tank (vertical pipe)*/
+	left:297px;
+	height: 446px;
+	top: 72px;
+}
+.pipeup.pipe-vertical-secondup {/*pipe postion of the water flow (vertical pipe)right side og the tank*/
+	left: 400px;
+	height: 201px;
+	top: 181px;
+	border-top: none;
+	z-index:12;
+}
+.pipeup.pipe-verticalup .water-fillup {/*water fill postion (vertical pipe)*/
+	/*bottom: 0;*/
+	top: 0;
+	width: 18px;
+	height: 0;
+	-webkit-transition: all 0.5s linear;
+	-moz-transition: all 0.5s linear;
+	-ms-transition: all 0.5s linear;
+	transition: all 0.5s linear;
+}
+
+.pipeup.pipe-horizontal-secondup-first {/*pipe postion of the water flow  (horizontal pipe)upper right side*/
+	width: 212px;
+	left:342px;
+	height: 10px;
+	top: 169px;
+	border-left: none;
+	z-index:11;
+}
+.pipeup.pipe-horizontal-secondup-second {/*pipe postion of the water flow  (horizontal pipe)bottom right side*/
+	width: 60px;
+	left: 342px;
+	height: 10px;
+	top: 370px;
+	z-index: 12;
+	border-right: none;
+	border-left: none;
+}
+.pipeup.pipe-horizontal-secondup-secondvertical {/*pipe postion of the water flow  to first container(vertical pipe)upper side*/
+	width: 10px;
+	left: 542px;
+	height: 108px;
+	top: 180px;
+	z-index: 12;
+	border-top: none;
+	border-bottom: none;
+}
+.pipeup.pipe-tank.pipe-animup .water-fillup, .pipeup.pipe-secondup.pipe-animup .water-fillup, .pipeup.pipe-verticalup.pipe-animup .water-fillup {
+	width: 100%;
+	height: 100%;
+}
+.pipeup.pipe-tank.pipe-animstop .water-fillstop, .pipeup.pipe-secondup.pipe-animstop .water-fillstop, .pipeup.pipe-verticalup.pipe-animstop .water-fillstop{
+	width: 100%;
+	height: 100%;
+}
+.valve-part-vertical{
+	position: relative;
+	display: inline-block;
+	cursor: pointer;	
+}
+.valve-part-vertical-circle {/*  horizontal valve on each vertical  pipe, middle circle part*/	
+	 position: absolute;	
+	}
+.valve-part-innercircle{
+	width: 18px;
+	height: 18px;
+	/*display: inline-block;*/
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	-ms-border-radius: 50%;
+	border-radius: 50%;
+	background: #485f6d;
+	top: 13px;
+	 left:1px;
+	z-index:3;
+	 cursor: pointer;
+	 position: absolute;
+}
+	.valve-part-vertical-circle.valve-part-vertical-first, .valve-part-vertical-circle.valve-part-vertical-second,  .valve-part-vertical-circle.valve-part-vertical-third{ /*circle at the end of  vertical pipe and horizontal pipe*/
+	 width: 45px;
+	 height: 5px;
+	 background: #485f6d;
+	 position: absolute;
+	 top: 20px;
+	 left: -12px;
+	 z-index:3;
+	 -webkit-border-radius: 6px;
+	 -moz-border-radius: 6px;
+	 -ms-border-radius: 6px;
+	 border-radius: 6px;
+	 /*transform:rotate(90deg);
+	 z-index:3;*/
+	 -webkit-animation-fill-mode: forwards;
+	 animation-fill-mode: forwards;
+ 
+	
+}
+
+
+ .water-fillstop {/*water stop flowing from each container*/
+	top:0;
+	width:18px;
+	height:0;
+	-webkit-transition: all 1.5s linear;
+	-moz-transition: all 1.5s linear;
+	-ms-transition: all 2s linear;
+	transition: all 1.5s linear;	
+	background: #fff;
+	position: absolute;
+	
+}
+ .pipe.pipe-vertical.pipe-animstop .water-fillstop {
+	width: 100%;
+	height: 100%;
+}
+
+
+
+.drain{
+	position: absolute;
+	 background: rgba(0, 0, 0, 0.10);
+	 border: 2px solid #ccc;
+	 width: 85px;
+	 height: 50px;
+	left:160px;
+	 top:520px;
+}
+.watermains{
+	position: absolute;
+	 background: rgba(0, 0, 0, 0.10);
+	 border: 2px solid #ccc;
+	 width: 85px;
+	 height: 50px;
+	left:500px;
+	 top:550px;
+}
+.pumps{
+	position: absolute;
+	 background: rgba(236, 154, 2, 0.945);
+	border: 5px solid rgb(204, 204, 204);
+	 width: 30px;
+	 height: 30px;
+	 left:740px;
+	 top:493px;
+	 -webkit-border-radius: 15px;
+	 -moz-border-radius: 15px;
+	 -ms-border-radius: 15px;
+	 border-radius: 15px;
+	 z-index:12;
+}
+.switchdiv{
+	position: absolute;
+	background: rgba(236, 154, 2, 0.945);
+   border: 1px solid rgb(204, 204, 204);
+	width: 25px;
+	height: 25px;
+	left:745px;
+	top:530px;
+
+}
+.switch{
+	position: absolute;
+	background: rgba(22, 117, 3, 0.911);
+	border: 1.5px solid rgb(204, 190, 190);
+	width: 12px;
+	height: 12px;
+	 left:4px;
+	 top:5px;
+	 cursor:pointer;
+}
+/*-----------------------------Start animations----------------------------------*/
+ .valve-rotate {
+	 -webkit-animation: spin 2s linear;
+	 -moz-animation: spin 2s linear;
+	 animation: spin 2s linear;
+}
+ @-moz-keyframes spin {
+	 100% {
+		 -moz-transform: rotate(180deg);
+	}
+}
+ @-webkit-keyframes spin {
+	 100% {
+		 -webkit-transform: rotate(180deg);
+	}
+}
+ @keyframes spin {
+	 100% {
+		 -webkit-transform: rotate(180deg);
+		 transform: rotate(180deg);
+	}
+}
+ .valve-rotate-reverce {
+	 -webkit-animation: spinReverce 2s linear;
+	 -moz-animation: spinReverce 2s linear;
+	 animation: spinReverce 2s linear;
+}
+ @-moz-keyframes spinReverce {
+	 100% {
+		 -moz-transform: rotate(-180deg);
+	}
+}
+ @-webkit-keyframes spinReverce {
+	 100% {
+		 -webkit-transform: rotate(-180deg);
+	}
+}
+ @keyframes spinReverce {
+	 100% {
+		 transform: rotate(-180deg);
+	}
+}
+ /*--------------------tap water----------------------------------*/
+ .valve-part-rotate{
+	 -webkit-animation: spinvalvepart 2s linear;
+	 -moz-animation: spinvalvepart 2s linear;
+	 animation: spinvalvepart 2s linear;
+}
+ 
+@-moz-keyframes spinvalvepart {
+    0% {
+        -moz-transform: rotateY(0deg);
+    }
+
+    100% {
+        -moz-transform: rotateY(360deg);
+    }
+}
+ @-webkit-keyframes spinvalvepart {
+	 0% {
+        -moz-transform: rotateY(0deg);
+    }
+
+    100% {
+        -moz-transform: rotateY(360deg);
+    }
+}
+ @keyframes spinvalvepart {
+	 
+		/* -webkit-transform: rotate(180deg);*/
+		  0% { transform: rotateY(0deg); }
+    100% { transform: rotateY(360deg); }
+		  
+	}
+
+ .valve-part-rotate-reverce {
+	 -webkit-animation: spinvalvepartReverce 2s linear;
+	 -moz-animation: spinvalvepartReverce 2s linear;
+	 animation: spinvalvepartReverce 2s linear;
+}
+ @-moz-keyframes spinvalvepartReverce {
+    0% {
+        -moz-transform: rotateY(0deg);
+    }
+
+    100% {
+        -moz-transform: rotateY(-360deg);
+    }
+}
+ @-webkit-keyframes spinvalvepartReverce {
+	 0% {
+        -moz-transform: rotateY(0deg);
+    }
+
+    100% {
+        -moz-transform: rotateY(-360deg);
+    }
+}
+ @keyframes spinvalvepartReverce {
+	 
+	0% {
+		transform: rotateY(0deg); 
+		}
+    100% { 
+		transform: rotateY(-360deg);
+	}
+		  
+}
+
+/*--------------------spin valve part vertical first-------------------------- */
+.valve-part-vertical-first-rotate{
+	-webkit-animation: spinvalvepartverticalfirst 3s linear;
+	-moz-animation: spinvalvepartverticalfirst 3s linear;
+	animation: spinvalvepartverticalfirst 3s linear;
+}
+
+@-moz-keyframes spinvalvepartverticalfirst {
+  
+   100% {
+	   -moz-transform: rotateZ(90deg);
+	 
+   }
+}
+@-webkit-keyframes spinvalvepartverticalfirst {
+
+   100% {
+	   -moz-transform: rotateZ(90deg);	   
+	   
+   }
+}
+@keyframes spinvalvepartverticalfirst {
+	
+	   /* -webkit-transform: rotate(180deg);*/
+
+        100% {
+			transform: rotateZ(90deg);	
+		}
+		 
+   }
+.valve-part-vertical-first-rotate-reverse{
+
+	-webkit-animation: spinvalvepartverticalRevercefirst 3s linear;
+	-moz-animation: spinvalvepartverticalRevercefirst 3s linear;
+	animation: spinvalvepartverticalRevercefirst 3s linear;
+}
+@-moz-keyframes spinvalvepartverticalRevercefirst {
+	
+   0% { -moz-transform: rotate(90deg);  }
+   100% {	-moz-transform: rotate(0deg);}
+}
+@-webkit-keyframes spinvalvepartverticalRevercefirst {
+	
+	0% {-moz-transform: rotate(90deg);	}
+	100% {-moz-transform: rotate(0deg); }
+}
+@keyframes spinvalvepartverticalRevercefirst {
+	0%{transform: rotate(90deg);}
+   100% {   transform: rotate(0deg);  }
+		 
+}
+
+/*------------------------------spin valve part vertical second -----------------------------------------*/
+.valve-part-vertical-second-rotate{
+	-webkit-animation: spinvalvepartverticalsecond 3s linear;
+	-moz-animation: spinvalvepartverticalsecond 3s linear;
+	animation: spinvalvepartverticalsecond 3s linear;
+}
+
+@-moz-keyframes spinvalvepartverticalsecond {
+   
+   100% {
+	   -moz-transform: rotate(90deg);
+   }
+}
+@-webkit-keyframes spinvalvepartverticalsecond {
+	
+   100% {
+	   -moz-transform: rotate(90deg);
+   }
+}
+@keyframes spinvalvepartverticalsecond {
+	
+	
+   100% { transform: rotate(90deg); }
+		 
+   }
+.valve-part-vertical-second-rotate-reverse{
+
+	-webkit-animation: spinvalvepartverticalRevercesecond 3s linear;
+	-moz-animation: spinvalvepartverticalRevercesecond 3s linear;
+	animation: spinvalvepartverticalRevercesecond 3s linear;
+}
+@-moz-keyframes spinvalvepartverticalRevercesecond {
+ 
+	0%{-moz-transform: rotate(90deg);}
+	100% { -moz-transform: rotate(0deg);}
+}
+@-webkit-keyframes spinvalvepartverticalRevercesecond {
+	0%{-moz-transform: rotate(90deg);}
+   100% { 	-moz-transform: rotate(0deg);  }
+}
+@keyframes spinvalvepartverticalRevercesecond {
+	
+	0%{transform: rotate(90deg);}
+	100% { 	transform: rotate(0deg);}
+		 
+}
+
+/*------------------------------spin valve part vertical third -----------------------------------------*/
+.valve-part-vertical-third-rotate{
+	-webkit-animation: spinvalvepartverticalthird 3s linear;
+	-moz-animation: spinvalvepartverticalthird 3s linear;
+	animation: spinvalvepartverticalthird 3s linear;
+}
+
+@-moz-keyframes spinvalvepartverticalthird {
+   
+   100% {
+	   -moz-transform: rotate(90deg);
+   }
+}
+@-webkit-keyframes spinvalvepartverticalthird {
+	
+   100% {
+	   -moz-transform: rotate(90deg);
+   }
+}
+@keyframes spinvalvepartverticalthird {
+		
+   100% { transform: rotate(90deg);  }
+}
+.valve-part-vertical-third-rotate-reverse{
+
+	-webkit-animation: spinvalvepartverticalRevercethird 3s linear;
+	-moz-animation: spinvalvepartverticalRevercethird 3s linear;
+	animation: spinvalvepartverticalRevercethird 3s linear;
+}
+@-moz-keyframes spinvalvepartverticalRevercethird {
+	0%{-moz-transform: rotate(90deg);}
+	100% { 	-moz-transform: rotate(0deg);}
+}
+@-webkit-keyframes spinvalvepartverticalRevercethird {
+	0%{-moz-transform: rotate(90deg);}
+	100% { -moz-transform: rotate(0deg);}
+}
+@keyframes spinvalvepartverticalRevercethird {
+	
+	0%{transform: rotate(90deg);}
+	100% { transform: rotate(0deg);}
+		 
+}
